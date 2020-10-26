@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "com.netflix.nebula:nebula-publishing-plugin:17.3.0"
+        classpath "com.netflix.nebula:nebula-release-plugin:15.1.0"
+    }
+}
+group 'be.tarsos'
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'nebula.release'
+apply plugin: 'nebula.maven-publish'
+
+dependencies {
+    implementation 'org.mapdb:mapdb:3.0.8'
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
